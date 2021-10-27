@@ -7,7 +7,7 @@ const { PORT, DATABASE_URL } = process.env;
 const express = require('express');
 // import mongoose
 const mongoose = require('mongoose');
-const flightController = './controllers/flight.js';
+const flightController = require('./controllers/flight.js');
 //* IMPORT MIDDLEWARE
 const cors = require('cors');
 const morgan = require('morgan');
@@ -27,12 +27,12 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //* Mount controllers
-// app.use('/flight', flightController);
+app.use('/flight', flightController);
 
 //* Test Route
-app.get('/', (req, res) => {
-  res.send('hello world');
-});
+// app.get('/', (req, res) => {
+//   res.send('hello world');
+// });
 
 //* Listener
 app.listen(PORT, () =>
