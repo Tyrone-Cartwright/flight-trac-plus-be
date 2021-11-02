@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     res.status(400).json(error);
   }
 });
-
+// Delete Flight
 router.delete('/:id', async (req, res) => {
   try {
     res.json(await Flight.findByIdAndDelete(req.params.id));
@@ -20,7 +20,7 @@ router.delete('/:id', async (req, res) => {
     res.status(400).json(error);
   }
 });
-
+// Update Flight
 router.put('/:id', async (req, res) => {
   try {
     res.json(
@@ -30,8 +30,9 @@ router.put('/:id', async (req, res) => {
     res.status(400).json(error);
   }
 });
-
-router.post('/', async (req, res) => {
+// Create Flight
+router.post('/dashboard', async (req, res) => {
+  console.log(req.body);
   try {
     res.json(await Flight.create(req.body));
   } catch (error) {

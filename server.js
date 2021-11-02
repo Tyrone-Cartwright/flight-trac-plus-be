@@ -8,6 +8,7 @@ const express = require('express');
 // import mongoose
 const mongoose = require('mongoose');
 const flightController = require('./controllers/flight.js');
+const admin = require('firebase-admin');
 //* IMPORT MIDDLEWARE
 const cors = require('cors');
 const morgan = require('morgan');

@@ -8,8 +8,8 @@ const FlightSchema = new Schema(
     adults: Number,
     children: Number,
     infants: Number,
-    typeTrip: String,
-    tripClass: String,
+    tripType: String,
+    flightClass: String,
     time: String,
   },
   { timestamps: true }
